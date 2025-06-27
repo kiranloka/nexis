@@ -27,11 +27,11 @@ export default function LandingPage() {
       {/* Header */}
       <header className="relative z-10 px-4 lg:px-6 h-16 flex items-center border-b border-gray-800/50 backdrop-blur-sm">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-            <Network className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            CrossChainPredictor
+          <span
+            className="text-xl font-bold "
+            style={{ fontFamily: "neuropol" }}
+          >
+            Nexis
           </span>
         </div>
         <nav className="ml-auto flex gap-6">
@@ -58,7 +58,7 @@ export default function LandingPage() {
 
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="px-4 py-24 md:py-32 lg:py-40">
+        <section className="px-4 py-20 md:py-32 lg:py-40">
           <div className="container mx-auto text-center">
             <div className="mb-8">
               <Badge
@@ -68,7 +68,10 @@ export default function LandingPage() {
                 Powered by LayerZero V2 × Solana
               </Badge>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1
+              className="text-3xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+              style={{ fontFamily: "neuropol" }}
+            >
               <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
                 Predict the Future
               </span>
@@ -77,59 +80,14 @@ export default function LandingPage() {
                 Across All Chains
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p
+              className="text-sm md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed"
+              style={{ fontFamily: "satoshi" }}
+            >
               The first decentralized cross-chain prediction market platform.
               Make predictions, earn rewards, and shape the future of DeFi
               across multiple blockchains.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 text-lg"
-              >
-                Launch App
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 text-lg bg-transparent"
-              >
-                Read Whitepaper
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="px-4 py-16 border-y border-gray-800/50">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                  $2.5M+
-                </div>
-                <div className="text-gray-400">Total Volume</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                  15K+
-                </div>
-                <div className="text-gray-400">Active Users</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                  500+
-                </div>
-                <div className="text-gray-400">Markets Created</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                  8
-                </div>
-                <div className="text-gray-400">Chains Supported</div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -247,7 +205,10 @@ export default function LandingPage() {
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <span
+                  className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+                  style={{ fontFamily: "neuropol" }}
+                >
                   How It Works
                 </span>
               </h2>
