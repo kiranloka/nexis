@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MarketProps } from "@/lib/interface";
+import { MarketProps } from "@/lib/constants";
 
 export default function MarketCard({
   title,
