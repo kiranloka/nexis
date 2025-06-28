@@ -12,6 +12,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import Header from "@/components/header";
 
 export default function LandingPage() {
   return (
@@ -24,36 +25,7 @@ export default function LandingPage() {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 px-4 lg:px-6 h-16 flex items-center border-b border-gray-800/50 backdrop-blur-sm">
-        <div className="flex items-center space-x-2">
-          <span
-            className="text-xl font-bold "
-            style={{ fontFamily: "neuropol" }}
-          >
-            Nexis
-          </span>
-        </div>
-        <nav className="ml-auto flex gap-6">
-          <Link
-            href="#features"
-            className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-          >
-            Features
-          </Link>
-          <Link
-            href="#how-it-works"
-            className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-          >
-            How It Works
-          </Link>
-          <Link
-            href="#roadmap"
-            className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-          >
-            Roadmap
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="relative z-10">
         {/* Hero Section */}
