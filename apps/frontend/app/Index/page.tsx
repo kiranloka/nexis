@@ -3,10 +3,14 @@
 import { AuroraBackground } from "@/components/AuroraBackground";
 import { predictions } from "@/lib/constants";
 import MarketCard from "@/components/MarketCard";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export default function Markets() {
   return (
     <AuroraBackground className="h-full">
+      <div className="bg-black w-full flex justify-end pr-5 pt-5 mb-0">
+        <WalletMultiButton />
+      </div>
       <div className="bg-black w-full min-h-full py-20 px-4 space-y-10">
         <div className="text-center space-y-2">
           <h1
