@@ -1,14 +1,13 @@
+use crate::{errors::PredictionMarketError, state::OAppConfig};
 use anchor_lang::prelude::*;
-use crate::{state::OAppConfig,errors::PredictionMarketError};
 
-#[derive(AnchorSerialize,AnchorDeserialize)]
-pub struct RegisterOAppParams{
-    pub endpoint:Pubkey,
+#[derive(AnchorSerialize, AnchorDeserialize)]
+pub struct RegisterOAppParams {
+    pub endpoint: Pubkey,
 }
 
-
 #[derive(Accounts)]
-pub struct RegisterOApp<'info>{
+pub struct RegisterOApp<'info> {
     #[account(
         init,
         payer=owner,
@@ -16,21 +15,19 @@ pub struct RegisterOApp<'info>{
         seeds=[b"opp_config"],
         bump
     )]
-
-    pbu oapp_config::Account<'info,OAppConfig>,
+    pub oapp_config: Account<'info, OAppConfig>,
     #[account(mut)]
-    pub owner:Signer<'info>,
-    pub system_program:Program<'info,System>,
-    pub endpoint_program:AccountInfo<'info>
+    pub owner: Signer<'info>,
+    pub system_program: Program<'info, System>,
+    pub endpoint_program: AccountInfo<'info>,
 }
 
-pub fn register_oapp(ctx:Context<RegisterOApp>,params:RegisterOApp)->Result<()>{
-
+pub fn register_oapp(ctx: Context<RegisterOApp>, params: RegisterOApp) -> Result<()> {
     let oapp_config = &mut ctx.accounts.oapp_config;
     oapp_config.endpoint = params.endpoint;
     oapp_config.owner = *ctx.accounts.owner.key;
-    oapp_config.delegate=None;
+    oapp_config.delegate = None;
 
-    endpoint::cpi::register_oapp()
+    endpoint::cpi::register_oapp();
     Ok(())
 }
