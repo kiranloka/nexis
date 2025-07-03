@@ -1,4 +1,4 @@
-use crate::state::OAppConfig;
+use crate::state::{MessagingFee, OAppConfig};
 use anchor_lang::prelude::*;
 
 #[derive(AnchorSerialize, AnchorDeserialize)]
@@ -14,7 +14,7 @@ pub struct Quote<'info> {
     pub endpoint_program: AccountInfo<'info>,
 }
 
-pub fn quote(ctx: Context<Quote>, params: QuoteParams) -> Result<()> {
+pub fn quote(ctx: Context<Quote>, params: QuoteParams) -> Result<MessagingFee> {
     Ok(MessagingFee {
         native_fee: 0,
         lz_token_fee: 0,

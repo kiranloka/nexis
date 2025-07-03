@@ -13,14 +13,14 @@ pub struct ResolveMarket<'info> {
     pub creator: Signer<'info>,
 }
 
-pub fn resolve_market(ctx: Content<ResolveMarket>, winning_option: u8) -> Result<()> {
-    let market = &mut ctx.account.market;
+pub fn resolve_market(ctx: Context<ResolveMarket>, winning_option: u8) -> Result<()> {
+    let market = &mut ctx.accounts.market;
     require!(
-        winning_option < market.option.len() as u8,
+        winning_option < market.options.len() as u8,
         PredictionMarketError::InvalidOption
     );
     require!(
-        Clock.get()?.unix_timestamp >= market_deadline,
+        Clock::get()?.unix_timestamp >= market.deadline,
         PredictionMarketError::DeadlinePassed
     );
 
@@ -28,7 +28,7 @@ pub fn resolve_market(ctx: Content<ResolveMarket>, winning_option: u8) -> Result
     market.winning_option = Some(winning_option);
 
     emit!(MarketResolved {
-        market: *ctx.accounts.market.key,
+        market: ctx.accounts.market.key(),
         winning_option,
     });
 

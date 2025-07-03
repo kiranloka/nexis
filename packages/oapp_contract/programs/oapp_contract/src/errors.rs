@@ -6,6 +6,8 @@ pub enum PredictionMarketError {
     MarketResolved,
     #[msg("Betting deadline has passed")]
     DeadlinePassed,
+    #[msg("Invalid Peer")]
+    InvalidPeer,
     #[msg("Invalid option index")]
     InvalidOption,
     #[msg("Insufficient Bet amount")]
